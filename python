@@ -1,0 +1,17 @@
+
+---
+
+### 🔧 `summarizer.py`
+```python
+from transformers import pipeline
+
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+
+def summarize(text):
+    summary = summarizer(text, max_length=130, min_length=30, do_sample=False)
+    return summary[0]['summary_text']
+
+if __name__ == "__main__":
+    import sys
+    input_text = sys.argv[1] if len(sys.argv) > 1 else "Paste your text here."
+    print("🧠 Summary:\n", summarize(input_text))
