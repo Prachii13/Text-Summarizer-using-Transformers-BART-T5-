@@ -1,0 +1,14 @@
+import streamlit as st
+from summarizer import summarize
+
+st.title("📝 Text Summarizer (BART)")
+
+text = st.text_area("Enter text to summarize:", height=250)
+
+if st.button("Summarize"):
+    if text.strip():
+        summary = summarize(text)
+        st.subheader("Summary:")
+        st.success(summary)
+    else:
+        st.warning("Please enter some text to summarize.")
