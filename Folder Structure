@@ -1,0 +1,6 @@
+text_summarizer/
+├── summarizer.py                     # Core summarization logic
+├── app.py                            # Streamlit app
+├── requirements.txt
+├── README.md
+└── .gitignore
